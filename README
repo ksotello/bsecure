@@ -1,0 +1,20 @@
+Install script (install.sql) requires you to set a password otherwise it will fail to run.
+  To do so add 'new_pass' after each IDENTIFIED BY statement. Do not use the same password
+  for both users.
+
+The next step is to update the passwords in bsecure.lib.php to match those you have set 
+  in the previous step. The users are designed with a minimal permissions philosphy.
+
+.: bsu_newuser
+This user exists with the express purpose of creating new users and has no business 
+  besides inserting on `bst_users` table.
+
+.: bsu_auth
+This user exists only to authenticate users and as such can only read from 
+  `bst_users`. This user can however modify the `bst_online` database.
+  
+.: Queries and filters
+Currently all queries are passed through a filter allowing only alphanumeric inputs
+  from users. Should you wish, this behavior can be changed by modifing the calls to
+  the query function. Filters are inverted, this means that what is matched is removed.
+  For example, to match numbers only you would use [^0-9].

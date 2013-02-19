@@ -1,0 +1,15 @@
+.: Changelog
+
+20130219
+  -Initial commit to GitHub.
+
+20121223
+  -Created seperate query function in bsecure.lib.php which allows for query filtering.
+  -Updated readme with a section about queries and filtering.
+
+20121216
+  -Added bsecure.readme
+  -Added bsecure.todo
+  -Added bsecure.changelog
+  -Removed default passwords from bsecure.lib.php
+  -Removed default passwords from install.sql (will not run w/out modification)
